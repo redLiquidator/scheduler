@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sch.demo.model.Quiz;
-import com.sch.demo.service.SchedulerService;
+import com.sch.demo.model.User;
+import com.sch.demo.service.schedulerService;
+import com.sch.demo.service.UserService;
 
 @Controller
 public class SchedulerController{
@@ -18,19 +20,20 @@ public class SchedulerController{
 	private static final Logger logger = LoggerFactory.getLogger(SchedulerController.class);
 
 	@Autowired
-	SchedulerService schedulerService;
+	schedulerService schedulerService;
+	@Autowired
+	UserService userService;
 	
 	@GetMapping("/scheduler")   
 	public ModelAndView scheduler() {
-		//assign quiz.html file to mv
+		
 	      ModelAndView mv = new ModelAndView("scheduler.html");
 	             
 	      logger.info("+++++++++++scheduler++++++++++++");
-
-	     // List<Quiz> quizList = quizService.SelectQuizList();
-
-	     // mv.getModelMap().addAttribute("quizList", quizList);
-		  //logger.info("quizList : " + quizList);
+	      String userid = "dalkahn";
+	      User user = userService.SelectUserInfo(userid);
+	      mv.addObject("user", user);
+	      logger.info("user : " + user);
 		  	  
 	      return mv;
 	}
