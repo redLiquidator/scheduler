@@ -30,6 +30,20 @@ CREATE TABLE user(
   CONSTRAINT testTable_PK PRIMARY KEY(userId)             
 );
 
+-- password column addition
+ALTER TABLE user
+ADD COLUMN password VARCHAR(300) 
+AFTER userid;
+
+UPDATE user
+SET password = 1234
+WHERE userId="dalkahn";
+
+
+select * from user;
+
+
+
 select * from availability;
 ALTER TABLE availability RENAME COLUMN created_by TO userId;
 

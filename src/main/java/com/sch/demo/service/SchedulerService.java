@@ -10,7 +10,7 @@ import com.sch.demo.model.Quiz;
 
 
 @Service
-public class schedulerService {
+public class SchedulerService {
 	@Autowired
 	SchedulerMapper schedulerMapper;
 	 

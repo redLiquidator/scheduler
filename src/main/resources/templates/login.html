@@ -173,6 +173,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/#">Hello, player1988 | 2100 points</a></li>
         <li><a href="/quiz">Quiz</a></li>
+        <li><a href="/scheduler">Scheduler</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/MyAccount">My Account</a></li>
         <li><a href="/contact">Contact</a></li>
@@ -189,15 +190,15 @@
 
   <div class="row">
     
-   <form role="form">
+   <form role="form" action="/member/login" method="post">
             <div class="form-group">
              <!--  <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> ID</label> -->
               <label for="psw"><span class="glyphicon glyphicon-user"></span> ID</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter your ID">
+              <input type="text" name="userid" class="form-control" autofocus="autofocus" id="psw" placeholder="Enter your ID">
             </div>
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Password</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter your password">
+              <input type="text" name="password" class="form-control" autofocus="autofocus" id="usrname" placeholder="Enter your password">
             </div>
               <button type="submit" class="btn btn-block">Login 
                 <span class="glyphicon glyphicon-ok"></span>

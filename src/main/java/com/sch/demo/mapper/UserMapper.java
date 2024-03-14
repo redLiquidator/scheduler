@@ -7,4 +7,6 @@ import com.sch.demo.model.User;
 public interface UserMapper{
 
 	public User SelectUserInfo(String userid);
+	
+	public User findById(String userid);
 }

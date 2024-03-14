@@ -4,4 +4,9 @@
   <select id="SelectUserInfo"  resultType="com.sch.demo.model.User">
     SELECT * FROM User where userid = #{userId}
   </select>
+  <select id="findById"  resultType="com.sch.demo.model.User">
+    SELECT * FROM User where userid = #{userId}
+  </select>
+  
+  
 </mapper>

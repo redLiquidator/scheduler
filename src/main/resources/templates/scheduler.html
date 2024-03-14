@@ -329,17 +329,20 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              
                              <!--if user has not login, show "log in". if logged in, show the user's name-->
-                             <th:block th:if="${not #strings.isEmpty(user.name)}">
-                               <span class="mr-2 d-none d-lg-inline text-gray-600 small">Please login</span>
-                             <th:block>  
+       
+                              
+                           
                              <th:block th:if="${user.name != ''}">
-                                Hello, <span th:text="${user.name}"></span>
-                             <th:block>					
-									
-                             <img class="img-profile rounded-circle"
+                               <span class="mr-2 d-none d-lg-inline text-gray-600 small" th:text="${user.name}"></span>
+                             <th:block>		
+							 <th:block th:if="${user.name == ''}">
+								  <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
+                               <span class="mr-2 d-none d-lg-inline text-gray-600 small">Please login</span>
+                             <th:block>				
+									
+                            
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
