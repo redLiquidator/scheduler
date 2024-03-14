@@ -331,15 +331,14 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               
                              <!--if user has not login, show "log in". if logged in, show the user's name-->
-                             <th:block th:if="${isEmpty(user.name)}">
+                             <th:block th:if="${not #strings.isEmpty(user.name)}">
                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Please login</span>
                              <th:block>  
-                               <th:block th:if="${user.name != ''}">
+                             <th:block th:if="${user.name != ''}">
                                 Hello, <span th:text="${user.name}"></span>
-                                <th:block>
+                             <th:block>					
 									
-									
-                                <img class="img-profile rounded-circle"
+                             <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
