@@ -1,4 +1,4 @@
-0.github token  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 
+
 1.bootstrap source: https://startbootstrap.com/previews/sb-admin-2
 --create database schedule;
 use schedule;
