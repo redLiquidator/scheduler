@@ -3,7 +3,7 @@
 --create database schedule;
 use schedule;
 
-  insert into user values("dalkahn","dal","summersoftsky@gmail.com",'2024-03-23');
+  insert into user values("dalkahn","dal","summersoftsky@email.com",'2024-03-23');
   insert into availability values ('slkdn111',"dalkahn",'2024-03-05',1,0,1,0,0,0,0,1,1,now());
   insert into availability values ('slkdn112',"dalkahn",'2024-03-05',0,0,0,1,0,0,0,1,1,now());
   insert into availability values ('slkdn113',"dalkahn",'2024-03-06',0,0,1,1,1,0,0,1,1,now());
