@@ -29,12 +29,14 @@ public class SchedulerController{
 	      ModelAndView mv = new ModelAndView("scheduler.html");
 	             
 	      logger.info("+++++++++++scheduler page++++++++++++");
-	      logger.info("login user :: "+session.getAttribute("userId"));
-	      String userid = "dalkahn";
-	      User user = userService.SelectUserInfo(userid);
-	      mv.addObject("user", user);
-	      logger.info("user : " + user);
-		  	  
+	      logger.info("login user :: "+session.getAttribute("userid"));
+	      //테스트값
+	      //String userid = "dalkahn";
+	      
+	      String userid = (String) session.getAttribute("userid");
+	  
+	      mv.addObject("userid", userid);	
+	      logger.info("userid : " + userid);  
 	      return mv;
 	}
 }
