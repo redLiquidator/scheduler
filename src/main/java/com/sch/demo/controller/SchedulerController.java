@@ -14,29 +14,29 @@ import com.sch.demo.service.UserService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class SchedulerController{
-	
+public class SchedulerController {
+
 	private static final Logger logger = LoggerFactory.getLogger(SchedulerController.class);
 
 	@Autowired
 	SchedulerService schedulerService;
 	@Autowired
 	UserService userService;
-	
-	@GetMapping("/scheduler")   
+
+	@GetMapping("/scheduler")
 	public ModelAndView scheduler(HttpSession session) {
-		
-	      ModelAndView mv = new ModelAndView("scheduler.html");
-	             
-	      logger.info("+++++++++++scheduler page++++++++++++");
-	      logger.info("login user :: "+session.getAttribute("userid"));
-	      //테스트값
-	      //String userid = "dalkahn";
-	      
-	      String userid = (String) session.getAttribute("userid");
-	  
-	      mv.addObject("userid", userid);	
-	      logger.info("userid : " + userid);  
-	      return mv;
+
+		ModelAndView mv = new ModelAndView("scheduler.html");
+
+		logger.info("+++++++++++scheduler page++++++++++++");
+		logger.info("login user :: " + session.getAttribute("userid"));
+		// 테스트값
+		// String userid = "dalkahn";
+
+		String userid = (String) session.getAttribute("userid");
+
+		mv.addObject("userid", userid);
+		logger.info("userid : " + userid);
+		return mv;
 	}
 }
