@@ -2,6 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sch.demo.mapper.SchedulerMapper">  
   <select id="getUserSchedule"  resultType="map">
-    SELECT * FROM availability WHERE userid= #{userId}
+		SELECT * FROM availability 
+		WHERE 
+		userid= #{userid}  
+		AND date > DATE_FORMAT(${startDate}, '%Y-%m-%d') 
+		LIMIT 7
   </select>
 </mapper>

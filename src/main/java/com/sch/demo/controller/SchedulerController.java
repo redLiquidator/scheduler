@@ -1,5 +1,6 @@
 package com.sch.demo.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -56,9 +57,13 @@ public class SchedulerController {
 	@ResponseBody //자바 객체를 HTTP 응답 본문의 객체로 변환
 	public List<HashMap<String, Object>> availability(@RequestBody User params, Model model) { // @RequestBody doesn't work
 		System.out.println("======SchedulerController.availability method called======");
+		System.out.println("from schedule.html, fetched userid "+params.getUserid()+" and startDate" + params.getStartDate());
+		
+		
 		List<HashMap<String, Object>> avail = new ArrayList<HashMap<String, Object>>();
+
 		avail = schedulerService.getUserSchedule(params.getUserid(),
-				params.getStartDate());
+				params.getStartDate()); 
 		return avail;
 	}
 

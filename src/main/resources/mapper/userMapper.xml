@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sch.demo.mapper.UserMapper">  
   <select id="SelectUserInfo"  resultType="com.sch.demo.model.User">
-    SELECT * FROM User where userid = #{userId}
+    SELECT * FROM User where userid = #{userid}
   </select>
   <select id="findById"  resultType="com.sch.demo.model.User">
-    SELECT * FROM User where userid = #{userId}
+    SELECT * FROM User where userid = #{userid}
   </select>
   
   

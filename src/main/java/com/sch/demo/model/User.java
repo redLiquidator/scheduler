@@ -17,7 +17,7 @@ public class User {
 	
 	private String Message;
 	
-	private Date startDate;
+	private String startDate;
 	
 	public User(String Message) {
 		this.Message = Message;

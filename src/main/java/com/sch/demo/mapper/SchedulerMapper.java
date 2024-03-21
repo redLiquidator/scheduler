@@ -7,5 +7,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SchedulerMapper{
 
-	List<HashMap<String, Object>> getUserSchedule(String userid);
+	List<HashMap<String, Object>> getUserSchedule(String userid, String startDate);
 }

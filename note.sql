@@ -55,8 +55,11 @@ WHERE userId="dalkahn";
 select * from user;
 
 
+SELECT STR_TO_DATE('20201030', '%Y/%m/%d');
 
-select * from availability;
+SELECT * FROM availability WHERE userid= 'dalkahn' LIMIT 7 AND date = STR_TO_DATE('20240321', '%Y%m%d');
+SELECT * FROM availability WHERE userid= 'dalkahn' LIMIT 7 AND date > DATE_FORMAT('20240321', '%Y-%m-%d');
+
 ALTER TABLE availability RENAME COLUMN created_by TO userId;
 
 -- alter table 테이블이름 add FOREIGN KEY(columnName) REFERENCES 참조테이블(참조컬럼);

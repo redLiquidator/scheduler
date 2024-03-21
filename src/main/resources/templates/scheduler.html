@@ -512,12 +512,16 @@
 </body>
 <script>
 	$( document ).ready(function() {
-	  var userid = "[[${userid}]]";
+	  let userid = "[[${userid}]]";
 	  console.log("=====document ready=====");
 	  console.log("userid : "+userid);
+	  
+	  let rightNow = new Date();
+	  //Thu Mar 21 2024 16:09:32 GMT+0900 (한국 표준시)->yyyymmdd string type
+	  let date = rightNow.toISOString().slice(0,10).replace(/-/g,"");
+	  console.log("date : "+date);
 	  //bring the user's 7days' availability schedule
 	  //request body should contain userid, starting date      
-	  const date = new Date(); 
 	  let params = {
 				  userid : userid,
 		          startDate : date
