@@ -17,9 +17,22 @@ use schedule;
   insert into availability values ('slkdn122',"dalkahn",'2024-03-15',0,0,0,0,1,1,0,0,1,now());
   insert into availability values ('slkdn123',"dalkahn",'2024-03-16',0,0,0,0,1,1,0,1,1,now());
   insert into availability values ('slkdn124',"dalkahn",'2024-03-17',1,0,0,0,1,1,0,1,1,now());
+ 
+   insert into availability values ('slkdn125',"dalkahn",'2024-03-18',0,1,1,0,0,0,0,1,0,now());
+  insert into availability values ('slkdn126',"dalkahn",'2024-03-19',0,0,0,0,0,0,1,1,0,now());
+  insert into availability values ('slkdn127',"dalkahn",'2024-03-20',1,0,0,1,0,1,0,0,0,now());
+  insert into availability values ('slkdn128',"dalkahn",'2024-03-21',1,0,0,1,0,1,0,0,1,now());
+  insert into availability values ('slkdn129',"dalkahn",'2024-03-22',1,0,1,1,0,1,1,0,1,now());
+  insert into availability values ('slkdn130',"dalkahn",'2024-03-23',0,0,1,0,0,1,1,0,1,now());
+  insert into availability values ('slkdn131',"dalkahn",'2024-03-24',0,0,1,0,0,0,0,0,1,now());
+  insert into availability values ('slkdn132',"dalkahn",'2024-03-25',0,0,0,0,0,0,1,0,1,now());
+  insert into availability values ('slkdn133',"dalkahn",'2024-03-26',0,0,1,1,0,1,0,1,1,now());
+  insert into availability values ('slkdn134',"dalkahn",'2024-03-27',0,0,0,0,0,1,0,1,1,now());
+ 
+ select * from availability a ;
 
   
-  use schedule;
+
 
 CREATE TABLE user(                               
   userId VARCHAR(300) NOT NULL,        /*up to 300 chars*/        

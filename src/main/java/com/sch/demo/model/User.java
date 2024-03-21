@@ -17,8 +17,18 @@ public class User {
 	
 	private String Message;
 	
+	private Date startDate;
+	
 	public User(String Message) {
 		this.Message = Message;
 	}
+	
+    //기본 생성자 추가
+	//HttpMessageNotReadableException: JSON parse error: 
+	//Cannot construct instance of `com.sch.demo.model.User` (although at least one Creator exists): 
+	//cannot deserialize from Object value (no delegate- or property-based Creator)]
+    public User() {
+
+    }
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.QuizMapper">  
-  <select id="SelectQuizList"  resultType="map">
-    SELECT * FROM quiz
+<mapper namespace="com.sch.demo.mapper.SchedulerMapper">  
+  <select id="getUserSchedule"  resultType="map">
+    SELECT * FROM availability WHERE userid= #{userId}
   </select>
 </mapper>

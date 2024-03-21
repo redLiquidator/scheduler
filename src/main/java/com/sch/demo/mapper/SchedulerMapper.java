@@ -1,9 +1,11 @@
 package com.sch.demo.mapper;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SchedulerMapper{
-	//@Select("Select * from quiz")
-	//public List<Quiz> SelectQuizList();
-	//public int SelectFromDual();
+
+	List<HashMap<String, String>> getUserSchedule(String userid);
 }

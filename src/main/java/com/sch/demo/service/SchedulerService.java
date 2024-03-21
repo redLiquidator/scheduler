@@ -1,5 +1,7 @@
 package com.sch.demo.service;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +19,9 @@ public class SchedulerService {
 	public List<Quiz> SelectQuizList(){ 
 		//return schedulerMapper.SelectQuizList(); 
 		return null;
+	}
+
+	public List<HashMap<String, String>> getUserSchedule(String userid, Date date) {
+		return schedulerMapper.getUserSchedule(userid);
 	}	 
 }

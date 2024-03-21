@@ -390,13 +390,16 @@
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>26 Mon</th>
-											<th>27 Tue</th>
-											<th>28 Wed</th>
-											<th>29 Thu</th>
-											<th>30 Fri</th>
-											<th>31 Sat</th>
-											<th>1 Sun</th>
+											<!--get 7 days. The first day will be today's date-->
+											<!--e.g. if today is 3/19, print from 19 to 26-->
+											
+											<th id="first">26 Mon</th>
+											<th id="second">27 Tue</th>
+											<th id="third">28 Wed</th>
+											<th id="fourth">29 Thu</th>
+											<th id="fifth">30 Fri</th>
+											<th id="sixth">31 Sat</th>
+											<th id="seventh">1 Sun</th>
 
 										</tr>
 									</thead>
@@ -437,26 +440,11 @@
 											<td>18:00</td>
 											<td>19:00</td>
 										</tr>
-
-
-
-
-
-										<!-- <tr>
-                                            <td>Jennifer Acosta</td>
-                                            <td>Junior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>43</td>
-                                            <td>2013/02/01</td>
-                                            <td>$75,650</td>
-                                             <td>$320,800</td>
-                                        </tr> -->
 									</tbody>
 								</table>
 							</div>
 						</div>
 					</div>
-
 				</div>
 				<!-- /.container-fluid -->
 
@@ -517,10 +505,43 @@
 
 	<!-- Page level plugins -->
 	<!-- <script type="text/javascript" th:src="@{vendor/datatables/jquery.dataTables.min.js}"></script>-->
-	<script type="text/javascript" th:src="@{vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+	<!--<script type="text/javascript" th:src="@{vendor/datatables/dataTables.bootstrap4.min.js}"></script>-->
 
 	<!-- Page level custom scripts -->
-	<script type="text/javascript" th:src="@{js/demo/datatables-demo.js}"></script>
+	<!--<script type="text/javascript" th:src="@{js/demo/datatables-demo.js}"></script>-->
 </body>
+<script>
+	$( document ).ready(function() {
+	  var userid = "[[${userid}]]";
+	  console.log("=====document ready=====");
+	  console.log("userid : "+userid);
+	  //bring the user's 7days' availability schedule
+	  //request body should contain userid, starting date      
+	  const date = new Date(); 
+	  let params = {
+				  userid : userid,
+		          startDate : date
+	          };                        
+	$.ajax({
+	  url: "/availability",
+	  data: JSON.stringify(params),  //javascript object-> json string
+	  type: 'POST',
+	  dataType : "json",
+      contentType: "application/json",
+	  success: function onData(data){
+	  console.log("ajax success. url /availability");
+	  console.log(data);
+	},
+	  error: function onError(error){
+	  console.log("ajax error. url /availability");
+	  console.error(error);
+	  }
+	});
+	
+   	//$("#first thead th").text("Different header text");doesn't work
+   	  
+ 	  
+	});
+</script>
 
 </html>
