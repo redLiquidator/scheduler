@@ -5,7 +5,7 @@
 		SELECT * FROM availability 
 		WHERE 
 		userid= #{userid}  
-		AND date > DATE_FORMAT(${startDate}, '%Y-%m-%d') 
+		AND date >= DATE_FORMAT(${startDate}, '%Y-%m-%d') 
 		LIMIT 7
   </select>
 </mapper>
