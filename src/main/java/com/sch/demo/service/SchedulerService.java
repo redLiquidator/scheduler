@@ -21,7 +21,7 @@ public class SchedulerService {
 		return null;
 	}
 
-	public List<HashMap<String, String>> getUserSchedule(String userid, Date date) {
+	public List<HashMap<String, Object>> getUserSchedule(String userid, Date date) {
 		return schedulerMapper.getUserSchedule(userid);
 	}	 
 }
